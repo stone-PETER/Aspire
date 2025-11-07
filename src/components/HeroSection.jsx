@@ -11,7 +11,7 @@ const HeroSection = ({ onRegisterClick }) => {
   return (
     <section className="hero">
       {/* Floating Bubbles */}
-      <div className="floating-bubbles">
+      {/* <div className="floating-bubbles">
         <div className="bubble bubble1">
           <img src="/ast1.png" alt="hand icon" />
         </div>
@@ -24,7 +24,7 @@ const HeroSection = ({ onRegisterClick }) => {
         <div className="bubble bubble4">
           <img src="/asts.png" alt="AI icon" />
         </div>
-      </div>
+      </div> */}
 
       <div className="hero-content section-inner">
         <h1>
