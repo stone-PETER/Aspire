@@ -63,7 +63,7 @@ const PostersSection = () => {
         try {
           swiperRef.current.autoplay.start();
         } catch {
-          // ignore
+          // Silently ignore - autoplay may fail if swiper is already destroyed
         }
       }
     };
@@ -76,22 +76,28 @@ const PostersSection = () => {
           <h2>Posters</h2>
           
           {/* Hub Toggle Buttons */}
-          <div className="hub-toggles">
+          <div className="hub-toggles" role="group" aria-label="Hub filter buttons">
             <button
               className={`hub-button ${activeHub === "kochi" ? "active" : ""}`}
               onClick={() => setActiveHub("kochi")}
+              aria-pressed={activeHub === "kochi"}
+              aria-label="Show Kochi Hub posters"
             >
               Kochi Hub
             </button>
             <button
               className={`hub-button ${activeHub === "malabar" ? "active" : ""}`}
               onClick={() => setActiveHub("malabar")}
+              aria-pressed={activeHub === "malabar"}
+              aria-label="Show Malabar Hub posters"
             >
               Malabar Hub
             </button>
             <button
               className={`hub-button ${activeHub === "travancore" ? "active" : ""}`}
               onClick={() => setActiveHub("travancore")}
+              aria-pressed={activeHub === "travancore"}
+              aria-label="Show Travancore Hub posters"
             >
               Travancore Hub
             </button>
