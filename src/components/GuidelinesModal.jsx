@@ -25,7 +25,7 @@ const GuidelinesModal = ({ isOpen, onClose }) => {
 
   const handleRegisterClick = () => {
     if (selectedHub && hubLinks[selectedHub]) {
-      window.open(hubLinks[selectedHub], "_blank");
+      window.open(hubLinks[selectedHub], "_blank", "noopener,noreferrer");
     }
   };
 
@@ -41,7 +41,7 @@ const GuidelinesModal = ({ isOpen, onClose }) => {
                 value={selectedHub}
                 onChange={handleHubChange}
               >
-                <option value="">Select Hub</option>
+                <option value="" disabled>Select Hub</option>
                 <option value="kochi">Kochi</option>
                 <option value="malabar">Malabar</option>
                 <option value="travancore">Travancore</option>
