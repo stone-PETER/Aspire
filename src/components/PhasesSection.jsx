@@ -52,7 +52,7 @@ const phases = [
         </span>
         <strong>✨Special Awards:</strong>
         <ul>
-          <li>Audience’s Choice & Innovation Excellence</li>
+          <li>Audience's Choice & Innovation Excellence</li>
         </ul>
       </>
     ),
