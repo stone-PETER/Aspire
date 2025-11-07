@@ -25,9 +25,18 @@
   text-align: center;
 }
 
+.section-description {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
 .posters h2 {
   color: var(--primary-color);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
   position: relative;
 }
 
@@ -67,29 +76,66 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all var(--transition-normal);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.hub-button:first-child {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.hub-button:nth-child(2) {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.hub-button:last-child {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .hub-button:hover {
-  background-color: var(--secondary-light);
-  color: var(--white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.hub-button.active {
+.hub-button:first-child:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.hub-button:nth-child(2):hover {
   background-color: var(--secondary-color);
   color: var(--white);
-  border-color: var(--secondary-dark);
+}
+
+.hub-button:last-child:hover {
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+.hub-button.active {
+  color: var(--white);
   box-shadow: var(--shadow-md);
 }
 
-.hub-button.active:hover {
-  background-color: var(--secondary-dark);
+.hub-button:first-child.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-dark);
 }
 
+.hub-button:nth-child(2).active {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-dark);
+}
+
+.hub-button:last-child.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-dark);
+}
 
 /* Carousel Container */
 .posters-carousel-container {
@@ -100,7 +146,6 @@
 
 .posters-swiper {
   padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xxl);
-
 }
 
 /* Poster Card */

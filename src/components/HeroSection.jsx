@@ -28,15 +28,34 @@ const HeroSection = ({ onRegisterClick }) => {
 
       <div className="hero-content section-inner">
         <h1>
-          <span className="signs-to-sounds">Aspire</span>
+          <span className="signs-to-sounds">ASPIRE</span>
           <br />
-          <span className="productathon">Learning Opportunity</span>
+          <span className="productathon">Signal Processing Initiative</span>
         </h1>
-        <p className="tagline">Empowering Innovation Across Three Hubs</p>
-        <p className="intro">
-          A tri-venue learning opportunity conducted in Kochi, Malabar, and Travancore hubs, 
-          bringing together innovation, collaboration, and growth.
+        <p className="tagline">
+          Annual Signal Processing Initiative for Regional Empowerment
         </p>
+        {/* <p className="intro">
+          A flagship one-day event by IEEE SPS Kerala Chapter uniting Student
+          Branch Chapters across the Travancore Hub. Experience technical
+          excellence through multiple parallel tracks, each uniquely designed by
+          individual chapters to foster innovation, collaboration, and
+          leadership in Signal Processing.
+        </p> */}
+        <div className="hero-stats">
+          <div className="stat-item">
+            <span className="stat-number">3</span>
+            <span className="stat-label">Regional Hubs</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">Multiple</span>
+            <span className="stat-label">Parallel Tracks</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">1</span>
+            <span className="stat-label">Day Event</span>
+          </div>
+        </div>
         <div className="hero-actions">
           <a
             href="#register"

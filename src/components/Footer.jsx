@@ -14,26 +14,21 @@ const Footer = () => (
       <div className="footer-links">
         <div className="contact section">
           <h4>Contact</h4>
-          <p className="email">sign2sound@gmail.com</p>
-          <p className="email bt">ieeespskerala@gmail.com</p>
+          <p className="email">ieeespskerala@gmail.com</p>
           <div className="contact-person">
-            <h5>Resha Fathima</h5>
-            <p>+91 70347 49249</p>
+            <h5>IEEE SPS Kerala Chapter</h5>
+            <p>Annual Signal Processing Initiative</p>
           </div>
           <div className="contact-person">
-            <h5>Muhammed Basim P</h5>
-            <p>+91 86061 20327</p>
-          </div>
-          <div className="contact-person">
-            <h5>Deepak Santhosh</h5>
-            <p>+91 94003 53443</p>
+            <h5>Event Coordination</h5>
+            <p>Student Branch Chapters - Travancore Hub</p>
           </div>
         </div>
         {/* <div className="sponsors section">
           <h4>Sponsors</h4>
         </div> */}
         <div className="social section">
-          <h4>Socials</h4>
+          <h4>Connect With IEEE SPS</h4>
           <div className="contacts-section">
             <div className="link-logos">
               <a
@@ -77,7 +72,10 @@ const Footer = () => (
       </div>
       <div className="footer-top">
         <p className="copyright">
-          © 2025 Signs to Sounds. All rights reserved.
+          © 2025 ASPIRE - IEEE SPS Kerala Chapter. All rights reserved.
+        </p>
+        <p className="tagline">
+          Annual Signal Processing Initiative for Regional Empowerment
         </p>
       </div>
     </div>

@@ -37,12 +37,12 @@ function App() {
         <div id="opportunities">
           <OpportunitiesSection />
         </div>
-        <div id="prizes">
+        {/* <div id="prizes">
           <PrizesSection />
-        </div>
-        <div id="faq">
+        </div> */}
+        {/* <div id="faq">
           <FAQSection />
-        </div>
+        </div> */}
         <div id="posters">
           <PostersSection />
         </div>

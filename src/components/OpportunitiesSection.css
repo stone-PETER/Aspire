@@ -2,7 +2,7 @@
 .opportunities {
   width: 100%;
   padding: var(--spacing-xxl) 0;
-  background: var(--background-color);
+  background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
   position: relative;
 }
 
@@ -15,121 +15,173 @@
   height: 4px;
   background: linear-gradient(
     90deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
+}
+
+.opportunities-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opportunities-header h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.opportunities-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  border-radius: 2px;
+}
+
+.opportunities-header p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin: var(--spacing-lg) 0 0;
+}
+
+/* Opportunities Grid */
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xxl);
+}
+
+.opportunity-card {
+  background: var(--white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.opportunity-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transition: all var(--transition-normal);
+}
+
+.opportunity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.opportunity-card:hover::before {
+  height: 5px;
+  background: linear-gradient(
+    90deg,
     var(--secondary-color),
     var(--primary-color),
     var(--accent-color)
   );
 }
 
-/* Two Column Layout */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xxl);
-  align-items: center;
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  display: block;
 }
 
-.stack h2 {
+.opportunity-card h3 {
   color: var(--primary-color);
+  font-size: 1.3rem;
   margin-bottom: var(--spacing-md);
-  position: relative;
+  font-weight: 600;
 }
 
-.stack h2::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--secondary-color),
-    var(--primary-color)
-  );
-  border-radius: 2px;
-}
-
-.stack p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+.opportunity-card p {
   color: var(--text-color);
-  opacity: 0.9;
-}
-
-/* Feature List */
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.feature-list li {
-  background: var(--white);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
-  border-radius: var(--radius-lg);
-  border-left: 4px solid var(--secondary-color);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
-  position: relative;
-  font-size: 1.1rem;
   line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
 }
 
-.feature-list li:hover {
-  transform: translateX(8px);
-  box-shadow: var(--shadow-md);
-  border-left-color: var(--primary-color);
+/* Add alternating colors for variety */
+.opportunity-card:nth-child(2n) .card-icon {
+  color: var(--secondary-color);
 }
 
-.feature-list li::before {
-  content: "✓";
-  position: absolute;
-  left: var(--spacing-md);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background: var(--secondary-color);
-  color: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 700;
-  transition: all var(--transition-normal);
+.opportunity-card:nth-child(3n) .card-icon {
+  color: var(--accent-color);
 }
 
-.feature-list li:hover::before {
-  background: var(--primary-color);
-  transform: translateY(-50%) scale(1.1);
+.opportunity-card:nth-child(2n) h3 {
+  color: var(--secondary-color);
 }
 
-.feature-list li {
-  padding-left: var(--spacing-xxl);
+.opportunity-card:nth-child(3n) h3 {
+  color: var(--accent-color);
+}
+
+.opportunity-card:nth-child(2n):hover {
+  border-color: var(--secondary-color);
+}
+
+.opportunity-card:nth-child(3n):hover {
+  border-color: var(--accent-color);
 }
 
 /* Animation */
-.stack h2 {
+.opportunities-header h2 {
   animation: fadeInUp 0.6s ease 0.2s both;
 }
 
-.stack p {
+.opportunities-header p {
   animation: fadeInUp 0.6s ease 0.3s both;
 }
 
-.feature-list li:nth-child(1) {
+.opportunity-card:nth-child(1) {
   animation: fadeInUp 0.6s ease 0.4s both;
 }
 
-.feature-list li:nth-child(2) {
+.opportunity-card:nth-child(2) {
   animation: fadeInUp 0.6s ease 0.5s both;
 }
 
-.feature-list li:nth-child(3) {
+.opportunity-card:nth-child(3) {
   animation: fadeInUp 0.6s ease 0.6s both;
+}
+
+.opportunity-card:nth-child(4) {
+  animation: fadeInUp 0.6s ease 0.7s both;
+}
+
+.opportunity-card:nth-child(5) {
+  animation: fadeInUp 0.6s ease 0.8s both;
+}
+
+.opportunity-card:nth-child(6) {
+  animation: fadeInUp 0.6s ease 0.9s both;
 }
 
 /* Mobile Responsiveness */
@@ -138,24 +190,24 @@
     padding: var(--spacing-xl) 0;
   }
 
-  .two-col {
+  .opportunities-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
-    text-align: center;
+    gap: var(--spacing-lg);
   }
 
-  .stack h2::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .opportunity-card {
+    padding: var(--spacing-lg);
   }
 
-  .feature-list li {
-    text-align: left;
-    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md)
-      var(--spacing-xl);
+  .card-icon {
+    font-size: 2rem;
   }
 
-  .feature-list li:hover {
-    transform: translateY(-3px);
+  .opportunity-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .opportunities-header h2::after {
+    width: 60px;
   }
 }

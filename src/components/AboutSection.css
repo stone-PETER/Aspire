@@ -29,6 +29,7 @@
   color: var(--primary-color);
   margin-bottom: var(--spacing-xl);
   position: relative;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
 }
 
 .about h2::after {
@@ -50,15 +51,67 @@
 .about p {
   font-size: 1.2rem;
   color: var(--text-color);
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto var(--spacing-xl);
   line-height: 1.8;
   opacity: 0.9;
 }
 
+/* ASPIRE Highlights Grid */
+.aspire-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.highlight-card h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.highlight-card p {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 .bullet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--spacing-xl);
   list-style: none;
   padding: 0;
@@ -118,6 +171,11 @@
     padding: var(--spacing-xl) 0;
   }
 
+  .aspire-highlights {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
   .bullet-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
@@ -129,6 +187,10 @@
 
   .about h2::after {
     width: 60px;
+  }
+
+  .highlight-card {
+    padding: var(--spacing-md);
   }
 }
 
@@ -147,10 +209,26 @@
   animation-delay: 0.2s;
 }
 
-.bullet-grid li:nth-child(1) {
+.aspire-highlights .highlight-card:nth-child(1) {
   animation-delay: 0.3s;
 }
 
-.bullet-grid li:nth-child(2) {
+.aspire-highlights .highlight-card:nth-child(2) {
   animation-delay: 0.4s;
+}
+
+.aspire-highlights .highlight-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.bullet-grid li:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.bullet-grid li:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.bullet-grid li:nth-child(3) {
+  animation-delay: 0.8s;
 }

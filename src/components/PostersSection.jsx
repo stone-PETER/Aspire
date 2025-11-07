@@ -8,16 +8,8 @@ import "./PostersSection.css";
 
 // Organize posters by hub
 const postersByHub = {
-  kochi: [
-    "/posters/campuss.png",
-    "/posters/p1.jpg",
-    "/posters/p2.jpg",
-  ],
-  malabar: [
-    "/posters/p3.jpg",
-    "/posters/p4.jpg",
-    "/posters/prize$.png",
-  ],
+  kochi: ["/posters/campuss.png", "/posters/p1.jpg", "/posters/p2.jpg"],
+  malabar: ["/posters/p3.jpg", "/posters/p4.jpg", "/posters/prize$.png"],
   travancore: [
     "/posters/winitall.jpg",
     "/posters/CLOSING.png",
@@ -73,33 +65,46 @@ const PostersSection = () => {
     <>
       <section id="posters" className="posters">
         <div className="section-inner">
-          <h2>Posters</h2>
-          
+          <h2>Event Posters & Track Information</h2>
+          <p className="section-description">
+            Explore the diverse technical tracks and events organized by Student
+            Branch Chapters across our three regional hubs. Each hub brings
+            unique perspectives to Signal Processing education.
+          </p>
+
           {/* Hub Toggle Buttons */}
-          <div className="hub-toggles" role="group" aria-label="Hub filter buttons">
+          <div
+            className="hub-toggles"
+            role="group"
+            aria-label="Hub filter buttons"
+          >
             <button
               className={`hub-button ${activeHub === "kochi" ? "active" : ""}`}
               onClick={() => setActiveHub("kochi")}
               aria-pressed={activeHub === "kochi"}
-              aria-label="Show Kochi Hub posters"
+              aria-label="Show Kochi Hub events"
             >
-              Kochi Hub
+              🌊 Kochi Hub
             </button>
             <button
-              className={`hub-button ${activeHub === "malabar" ? "active" : ""}`}
+              className={`hub-button ${
+                activeHub === "malabar" ? "active" : ""
+              }`}
               onClick={() => setActiveHub("malabar")}
               aria-pressed={activeHub === "malabar"}
-              aria-label="Show Malabar Hub posters"
+              aria-label="Show Malabar Hub events"
             >
-              Malabar Hub
+              🏔️ Malabar Hub
             </button>
             <button
-              className={`hub-button ${activeHub === "travancore" ? "active" : ""}`}
+              className={`hub-button ${
+                activeHub === "travancore" ? "active" : ""
+              }`}
               onClick={() => setActiveHub("travancore")}
               aria-pressed={activeHub === "travancore"}
-              aria-label="Show Travancore Hub posters"
+              aria-label="Show Travancore Hub events"
             >
-              Travancore Hub
+              🌿 Travancore Hub
             </button>
           </div>
 

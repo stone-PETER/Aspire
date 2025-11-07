@@ -3,56 +3,60 @@ import "./PhasesSection.css";
 
 const phases = [
   {
-    title: "Phase 1 – Research & Proposal",
-    desc: "Explore the problem, analyze datasets, and design your AI framework. Submit a proposal detailing your problem approach, data strategy, model plan, and workflow.",
+    title: "Track 1 – Signal Processing Fundamentals",
+    desc: "Explore core concepts in digital signal processing, including filtering, transforms, and spectral analysis. Perfect for beginners looking to build a strong foundation.",
     details: (
       <>
-        <strong>💡 Tip</strong>
+        <strong>🎯 Focus Areas</strong>
         <ul>
-          <li>Highlight innovation and social impact!</li>
+          <li>Time & Frequency Domain Analysis</li>
+          <li>Digital Filters & Design</li>
+          <li>Fourier Transforms & Applications</li>
         </ul>
-        
       </>
     ),
   },
   {
-    title: "Phase 2 – Model & Demo",
-    desc: "Shortlisted teams train and optimize models using ethical datasets. Document performance, metrics, and challenges, and submit a demo video.",
+    title: "Track 2 – Machine Learning in Signal Processing",
+    desc: "Discover how AI and ML techniques are revolutionizing signal processing applications, from speech recognition to biomedical signal analysis.",
     details: (
       <>
-        <strong>Tip</strong>
+        <strong>💡 Key Topics</strong>
         <ul>
-          <li>🎯 Focus on accuracy, efficiency, and adaptability.</li>
+          <li>Deep Learning for Signal Classification</li>
+          <li>Feature Extraction Techniques</li>
+          <li>Real-time Signal Processing with ML</li>
         </ul>
-       
       </>
     ),
   },
   {
-    title: "Phase 3 – Prototype & Judging",
-    desc: "Build a real-time sign-to-speech prototype integrating camera, microcontroller, and audio output. Showcase live performance with deployment docs and a final presentation.",
+    title: "Track 3 – Communication Systems",
+    desc: "Dive into modern communication technologies including 5G, wireless networks, and emerging protocols that shape our connected world.",
     details: (
       <>
-        <strong>Teams will:</strong>
+        <strong>📡 Explore</strong>
         <ul>
-          <li>Integrate hardware</li>
-          <li>Show real-time use</li>
+          <li>5G Network Architecture</li>
+          <li>Digital Modulation Techniques</li>
+          <li>IoT Communication Protocols</li>
         </ul>
-      
       </>
     ),
   },
   {
-    title: "Evaluation Criteria",
-    desc: "Model accuracy & real-time performance\nInnovation & scalability\nAccessibility impact\nDocumentation & presentation.",
+    title: "Track 4 – Biomedical Signal Processing",
+    desc: "Learn how signal processing transforms healthcare through ECG analysis, brain-computer interfaces, and medical imaging applications.",
     details: (
       <>
-        <span role="img" aria-label="Trophy">
-          🏆
+        <span role="img" aria-label="Medical">
+          �
         </span>
-        <strong>✨Special Awards:</strong>
+        <strong>🔬 Applications:</strong>
         <ul>
-          <li>Audience's Choice & Innovation Excellence</li>
+          <li>ECG & EEG Signal Analysis</li>
+          <li>Medical Image Processing</li>
+          <li>Wearable Health Monitoring</li>
         </ul>
       </>
     ),
@@ -63,7 +67,12 @@ export default function PhasesSection() {
   return (
     <section className="phases">
       <div className="section-inner">
-        <h2>Competition Phases</h2>
+        <h2>Technical Track Sessions</h2>
+        <p className="section-description">
+          Multiple parallel tracks designed by Student Branch Chapters across
+          the Travancore Hub, each offering unique perspectives on Signal
+          Processing applications and innovations.
+        </p>
         <div className="phases-list auto-grid">
           {phases.map((p, i) => (
             <article
