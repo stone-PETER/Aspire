@@ -1,0 +1,299 @@
+/* Prizes Section Styles */
+.prizes {
+  width: 100%;
+  padding: var(--spacing-xxl) 0;
+  background: var(--white);
+  position: relative;
+}
+
+.prizes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+.prizes .section-inner {
+  text-align: center;
+}
+
+.prizes h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.prizes h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  border-radius: 2px;
+}
+
+/* Prizes Grid */
+.prizes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
+}
+
+/* Center the 4th card when it's alone on a row */
+.prize-card:nth-child(4) {
+  grid-column: 1 / -1;
+  max-width: 350px;
+  justify-self: center;
+}
+
+.prize-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Prize Card Gradients */
+.prize-card:nth-child(1) {
+  background: linear-gradient(135deg, #ffd700 0%, #ffa000 100%);
+  color: var(--text-color);
+}
+
+.prize-card:nth-child(2) {
+  background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+  color: var(--text-color);
+}
+
+.prize-card:nth-child(3) {
+  background: linear-gradient(135deg, #ffab91 0%, #ff8a65 100%);
+  color: var(--text-color);
+}
+
+.prize-card:nth-child(4) {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  color: var(--white);
+}
+
+/* Prize Card Hover Effects */
+.prize-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.prize-card:nth-child(1):hover {
+  box-shadow: 0 15px 35px rgba(255, 193, 7, 0.4);
+}
+
+.prize-card:nth-child(2):hover {
+  box-shadow: 0 15px 35px rgba(158, 158, 158, 0.4);
+}
+
+.prize-card:nth-child(3):hover {
+  box-shadow: 0 15px 35px rgba(255, 138, 101, 0.4);
+}
+
+.prize-card:nth-child(4):hover {
+  box-shadow: 0 15px 35px rgba(63, 81, 181, 0.4);
+}
+
+/* Prize Card Content */
+.prize-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.prize-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.prize-card p {
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.prize-card p:last-child {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Prizes Note */
+.prizes-note {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(63, 81, 181, 0.05) 0%,
+    rgba(103, 58, 183, 0.05) 100%
+  );
+  border: 1px solid rgba(63, 81, 181, 0.1);
+  border-radius: var(--radius-md);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  text-align: center;
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(63, 81, 181, 0.08);
+}
+
+.prizes-note::before {
+  content: "🎁";
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.prizes-note::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 1px;
+}
+
+/* Registration Section */
+.registration {
+  margin-top: var(--spacing-xxl);
+  padding: var(--spacing-xl);
+  background: var(--background-color);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(63, 81, 181, 0.1);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration p {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-color);
+}
+
+.registration strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.registration .button {
+  font-size: 1.1rem;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.registration .button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Medal Icons */
+.prize-card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.prize-card:nth-child(1)::before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gold"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>');
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Animation delays */
+.prize-card:nth-child(1) {
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.prize-card:nth-child(2) {
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.prize-card:nth-child(3) {
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.prize-card:nth-child(4) {
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+.registration {
+  animation: fadeInUp 0.6s ease 0.7s both;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .prizes {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .prizes-list {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .prize-card {
+    padding: var(--spacing-lg);
+  }
+
+  .registration {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+  }
+}

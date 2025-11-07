@@ -1,0 +1,225 @@
+/* Team Section Styles */
+.team {
+  width: 100%;
+  padding: var(--spacing-xxl) 0;
+  background: var(--white);
+  position: relative;
+}
+
+.team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
+}
+
+.team .section-inner {
+  text-align: center;
+}
+
+.team h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.team h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 2px;
+}
+
+/* Team Grid */
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Team Card */
+.team-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(63, 81, 181, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.team-card:hover::before {
+  transform: translateX(0);
+}
+
+/* Avatar */
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.avatar::before {
+  content: "👤";
+  font-size: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.team-card:hover .avatar {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(63, 81, 181, 0.3);
+}
+
+/* Team Member Info */
+.team-card h3 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.team-card .role {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-card .desc {
+  color: var(--text-color);
+  opacity: 0.8;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Staggered Animation */
+.team-card:nth-child(1) {
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.team-card:nth-child(2) {
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.team-card:nth-child(3) {
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.team-card:nth-child(4) {
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+/* Different avatar colors for each member */
+.team-card:nth-child(1) .avatar {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-light)
+  );
+}
+
+.team-card:nth-child(2) .avatar {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--secondary-light)
+  );
+}
+
+.team-card:nth-child(3) .avatar {
+  background: linear-gradient(135deg, var(--accent-color), #ffe082);
+}
+
+.team-card:nth-child(4) .avatar {
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--primary-color)
+  );
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .team {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .team-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .team-card {
+    padding: var(--spacing-lg);
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .avatar::before {
+    font-size: 1.8rem;
+  }
+}

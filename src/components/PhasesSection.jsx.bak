@@ -1,0 +1,87 @@
+import React from 'react';
+import './PhasesSection.css';
+
+const phases = [
+  {
+    title: 'Phase 1 – Research & Proposal',
+    desc: 'Explore the problem and submit your plan.',
+    details: (
+      <>
+        <strong>Proposal includes:</strong>
+        <ul>
+          <li>Problem & solution</li>
+          <li>Data & model plan</li>
+        </ul>
+        <span role="img" aria-label="Tip">💡</span>
+        <em> Show originality & impact!</em>
+      </>
+    ),
+  },
+  {
+    title: 'Phase 2 – Model & Demo',
+    desc: 'Train your model and show results.',
+    details: (
+      <>
+        <strong>Teams will:</strong>
+        <ul>
+          <li>Train with ethical data</li>
+          <li>Report & demo video</li>
+        </ul>
+        <span role="img" aria-label="Focus">🎯</span>
+        <em> Focus: accuracy & adaptability.</em>
+      </>
+    ),
+  },
+  {
+    title: 'Phase 3 – Prototype & Judging',
+    desc: 'Build a real-time sign-to-speech prototype.',
+    details: (
+      <>
+        <strong>Teams will:</strong>
+        <ul>
+          <li>Integrate hardware</li>
+          <li>Show real-time use</li>
+        </ul>
+        <span role="img" aria-label="Sparkles">✨</span>
+        <em> Special awards for creativity!</em>
+      </>
+    ),
+  },
+  {
+    title: 'Phase 4 – Evaluation Criteria',
+    desc:
+      'Accuracy, performance, innovation, scalability, accessibility, documentation & presentation',
+    details: (
+      <>
+        <span role="img" aria-label="Trophy">🏆</span>
+        <strong> Bonus Awards:</strong>
+        <ul>
+          <li>Audience’s Choice</li>
+          <li>Innovation Excellence</li>
+        </ul>
+      </>
+    ),
+  },
+];
+
+export default function PhasesSection() {
+  return (
+    <section className="phases">
+      <div className="section-inner">
+        <h2>Competition Phases</h2>
+        <div className="phases-list auto-grid">
+          {phases.map((p, i) => (
+            <article className="phase-card card" key={i} tabIndex={0} aria-labelledby={`phase-${i}-title`}>
+              <h3 id={`phase-${i}-title`}>{p.title}</h3>
+              <p>{p.desc}</p>
+
+              <div className="phase-hover-content" role="region" aria-hidden="false">
+                {p.details}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

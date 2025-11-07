@@ -1,0 +1,256 @@
+/* Posters Section Styles */
+.posters {
+  width: 100%;
+  padding: var(--spacing-xxl) 0;
+  background: var(--white);
+  position: relative;
+}
+
+.posters::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
+}
+
+.posters .section-inner {
+  text-align: center;
+}
+
+.posters h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.posters h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 2px;
+}
+
+/* Carousel Container */
+.posters-carousel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) 0;
+}
+
+.posters-swiper {
+  padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xxl);
+
+}
+
+/* Poster Card */
+.poster-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  border: 1px solid rgba(63, 81, 181, 0.1);
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.poster-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.poster-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Swiper Navigation Customization */
+.posters-swiper .swiper-button-prev,
+.posters-swiper .swiper-button-next {
+  color: var(--primary-color);
+  background: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: absolute;
+}
+.posters-swiper .swiper-button-prev {
+  right: 10px;
+}
+.posters-swiper .swiper-button-next {
+  right: 10px;
+}
+.posters-swiper .swiper-button-prev:hover,
+.posters-swiper .swiper-button-next:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.posters-swiper .swiper-button-prev::after,
+.posters-swiper .swiper-button-next::after {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Swiper Pagination Customization */
+.posters-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color);
+  opacity: 0.3;
+  transition: all var(--transition-normal);
+}
+
+.posters-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 30px;
+  border-radius: 6px;
+  background: var(--primary-color);
+}
+
+/* Lightbox Modal */
+.poster-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+  padding: var(--spacing-lg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: -50px;
+  right: -10px;
+  background: var(--white);
+  color: var(--text-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+  font-weight: 300;
+}
+
+.modal-close:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: rotate(90deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .posters {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .posters-swiper {
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-xl);
+  }
+
+  .posters-swiper .swiper-button-prev,
+  .posters-swiper .swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .posters-swiper .swiper-button-prev::after,
+  .posters-swiper .swiper-button-next::after {
+    font-size: 16px;
+  }
+
+  .modal-close {
+    top: -40px;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+
+  .modal-image {
+    max-height: 85vh;
+  }
+}
+
+/* Animation for entrance */
+.posters h2 {
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.posters-carousel-container {
+  animation: fadeInUp 0.6s ease 0.4s both;
+}

@@ -1,0 +1,503 @@
+/* Hero Section Styles */
+.saira-stencil-one-regular {
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.black-ops-one-regular {
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* .hero h1 .signs-to-sounds {
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight:700;
+  display: block;
+} */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /* max-width: 800px; */
+  animation: fadeInUp 1s ease 0.3s both;
+  pointer-events: none; /* Allow clicks to pass through to bubbles */
+}
+
+.hero-content * {
+  pointer-events: auto; /* Re-enable pointer events for actual content */
+}
+
+.hero h1 {
+  font-family: "Black Ops One", sans-serif;
+  font-weight: 700;
+  display: block;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(
+    /* 135deg, */ var(--white) 50%,
+    var(--accent-color) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.02em;
+  animation: titleFadeIn 1.2s ease-out;
+  position: relative;
+}
+
+/* Add a stronger emphasis animation */
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Add a subtle pulsing effect for extra prominence */
+.hero h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 193, 7, 0.1) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.tagline {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  margin-bottom: var(--spacing-lg);
+  color: var(--accent-color);
+  font-family: var(--font-heading);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.intro {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease 0.6s both;
+}
+
+.hero-actions .button {
+  min-width: 180px;
+  font-size: 1.1rem;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Primary button - Register Now */
+.hero .hero-actions .button.primary {
+  background: var(--accent-color) !important;
+  color: var(--text-color) !important;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-transform: none !important;
+}
+
+/* Beautiful golden hover animation */
+.hero .hero-actions a.button.primary:hover {
+  background: linear-gradient(135deg, #ffb300, #ffd700) !important;
+  transform: translateY(-4px) scale(1.05) !important;
+  box-shadow: 0 15px 35px rgba(255, 193, 7, 0.6),
+    0 0 20px rgba(255, 193, 7, 0.4) !important;
+  animation: goldenPulse 2s ease-in-out infinite !important;
+}
+
+.hero .hero-actions .button.primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.hero .hero-actions .button.primary:hover::before {
+  left: 100%;
+}
+
+@keyframes goldenPulse {
+  0%,
+  100% {
+    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.6),
+      0 0 20px rgba(255, 193, 7, 0.4);
+  }
+  50% {
+    box-shadow: 0 20px 45px rgba(255, 193, 7, 0.8),
+      0 0 30px rgba(255, 193, 7, 0.6);
+  }
+}
+
+@keyframes registerPulse {
+  0%,
+  100% {
+    box-shadow: 0 15px 40px rgba(255, 193, 7, 0.8),
+      0 0 25px rgba(255, 193, 7, 0.6) !important;
+  }
+  50% {
+    box-shadow: 0 20px 50px rgba(255, 193, 7, 0.9),
+      0 0 35px rgba(255, 193, 7, 0.8) !important;
+  }
+}
+
+.hero-actions .secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.hero-actions .secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 90vh;
+    padding: var(--spacing-xl) 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .intro {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Scroll Indicator */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  animation: scrollIndicator 2s ease-in-out infinite;
+}
+
+@keyframes scrollIndicator {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Floating Bubbles (Desktop Only) */
+/* Floating Bubbles (Desktop Only) */
+@media (min-width: 1024px) {
+  .floating-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+/* Each bubble acts as a circular container */
+.floating-bubbles .bubble {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.05)
+  );
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+  opacity: 0.8;
+  animation: floatBubble 15s infinite ease-in-out;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  z-index: 10;
+  pointer-events: auto; /* Re-enable pointer events for individual bubbles */
+}
+
+/* Image inside the bubble */
+.bubble img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  filter: brightness(1) saturate(1);
+  pointer-events: none; /* Prevent image from blocking hover events */
+}
+
+/* Individual bubble positions and speeds */
+.bubble1 {
+  top: 25%;
+  left: 12%;
+  animation-delay: 0s;
+  animation-duration: 20s;
+  z-index: 11;
+}
+
+.bubble1:hover {
+  transform: scale(1.3) rotate(20deg);
+  box-shadow: 0 8px 35px rgba(255, 255, 255, 0.4),
+    0 0 25px rgba(255, 193, 7, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-color);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 193, 7, 0.3),
+    rgba(255, 255, 255, 0.15)
+  );
+  opacity: 1;
+  animation-play-state: paused;
+  z-index: 20;
+}
+
+.bubble1:hover img {
+  transform: scale(1.1) rotate(-10deg);
+  opacity: 1;
+  filter: brightness(1.2) saturate(1.3);
+}
+
+.bubble2 {
+  top: 65%;
+  left: 22%;
+  animation-delay: 3s;
+  animation-duration: 23s;
+  z-index: 12;
+}
+
+.bubble2:hover {
+  transform: scale(1.25) rotate(-18deg);
+  box-shadow: 0 8px 35px rgba(255, 255, 255, 0.4),
+    0 0 25px rgba(255, 193, 7, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-color);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 193, 7, 0.3),
+    rgba(255, 255, 255, 0.15)
+  ) !important;
+  opacity: 1;
+  animation-play-state: paused;
+  z-index: 20;
+}
+
+.bubble2:hover img {
+  transform: scale(1.1) rotate(-10deg);
+  opacity: 1;
+  filter: brightness(1.2) saturate(1.3);
+}
+
+.bubble3 {
+  top: 45%;
+  right: 15%;
+  animation-delay: 5s;
+  animation-duration: 21s;
+  z-index: 13;
+}
+
+.bubble3:hover {
+  transform: scale(1.28) rotate(25deg);
+  box-shadow: 0 8px 35px rgba(255, 255, 255, 0.4),
+    0 0 25px rgba(255, 193, 7, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-color);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 193, 7, 0.3),
+    rgba(255, 255, 255, 0.15)
+  );
+  opacity: 1;
+  animation-play-state: paused;
+  z-index: 20;
+}
+
+.bubble3:hover img {
+  transform: scale(1.1) rotate(-10deg);
+  opacity: 1;
+  filter: brightness(1.2) saturate(1.3);
+}
+
+.bubble4 {
+  top: 75%;
+  right: 8%;
+  animation-delay: 1s;
+  animation-duration: 26s;
+  z-index: 14;
+}
+
+.bubble4:hover {
+  transform: scale(1.2) rotate(-22deg);
+  box-shadow: 0 8px 35px rgba(255, 255, 255, 0.4),
+    0 0 25px rgba(255, 193, 7, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-color);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 193, 7, 0.3),
+    rgba(255, 255, 255, 0.15)
+  );
+  opacity: 1;
+  animation-play-state: paused;
+  z-index: 20;
+}
+
+.bubble4:hover img {
+  transform: scale(1.1) rotate(-10deg);
+  opacity: 1;
+  filter: brightness(1.2) saturate(1.3);
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.1) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85;
+  }
+}
+
+/* Add a subtle pulse animation for extra interactivity */
+@keyframes bubblePulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Add click effect for better feedback */
+.bubble:active {
+  transform: scale(1.1) rotate(8deg);
+  transition-duration: 0.1s;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  /* Hide floating bubbles on mobile to avoid obstruction */
+  .floating-bubbles {
+    display: none;
+  }
+}
