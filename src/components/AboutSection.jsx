@@ -4,20 +4,20 @@ import "./AboutSection.css";
 const AboutSection = () => (
   <section className="about">
     <div className="section-inner">
-      <h2>Transforming Communication Through Technology</h2>
+      <h2>A Tri-Venue Learning Experience</h2>
       <p>
-        Signs to Sounds bridges the gap between the deaf/hard-of-hearing and
-        hearing communities by leveraging AI, machine learning, and embedded
-        systems.
+        Aspire is a comprehensive learning opportunity spanning three vibrant hubs 
+        across Kerala - Kochi, Malabar, and Travancore. Each hub offers unique 
+        perspectives and collaborative experiences.
       </p>
       <ul className="bullet-grid">
         <li>
-          <strong>Our Mission:</strong> Inspire impactful tech-driven solutions
-          for inclusivity.
+          <strong>Our Mission:</strong> Foster innovation and learning through 
+          collaborative experiences across three regional hubs.
         </li>
         <li>
-          <strong>Get Involved:</strong> Collaborate globally to create
-          real-time sign language to speech systems.
+          <strong>Get Involved:</strong> Join us at any of our three venues and 
+          be part of a transformative learning journey.
         </li>
       </ul>
     </div>

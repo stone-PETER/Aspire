@@ -6,26 +6,33 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./PostersSection.css";
 
-// Import all posters from the posters directory
-// Add more poster paths as you add new files to public/posters/
-const posters = [
-  "/posters/campuss.png",
-  "/posters/p1.jpg",
-  "/posters/p2.jpg",
-  "/posters/p3.jpg",
-  "/posters/p4.jpg",
-  "/posters/prize$.png",
-  "/posters/winitall.jpg",
-
-
-  // Add more poster paths here as you add new posters
-  // Example: "/posters/poster2.jpg",
-];
+// Organize posters by hub
+const postersByHub = {
+  kochi: [
+    "/posters/campuss.png",
+    "/posters/p1.jpg",
+    "/posters/p2.jpg",
+  ],
+  malabar: [
+    "/posters/p3.jpg",
+    "/posters/p4.jpg",
+    "/posters/prize$.png",
+  ],
+  travancore: [
+    "/posters/winitall.jpg",
+    "/posters/CLOSING.png",
+    "/posters/cli.png",
+  ],
+};
 
 const PostersSection = () => {
   const [selectedPoster, setSelectedPoster] = useState(null);
+  const [activeHub, setActiveHub] = useState("kochi"); // Default to Kochi
   const originalOverflowRef = useRef(null);
   const swiperRef = useRef(null);
+
+  // Get posters for the currently active hub
+  const currentPosters = postersByHub[activeHub];
 
   const openModal = (posterUrl) => {
     setSelectedPoster(posterUrl);
@@ -55,8 +62,8 @@ const PostersSection = () => {
       if (swiperRef.current && swiperRef.current.autoplay) {
         try {
           swiperRef.current.autoplay.start();
-        } catch (e) {
-          // ignore
+        } catch {
+          // Silently ignore - autoplay may fail if swiper is already destroyed
         }
       }
     };
@@ -67,8 +74,38 @@ const PostersSection = () => {
       <section id="posters" className="posters">
         <div className="section-inner">
           <h2>Posters</h2>
+          
+          {/* Hub Toggle Buttons */}
+          <div className="hub-toggles" role="group" aria-label="Hub filter buttons">
+            <button
+              className={`hub-button ${activeHub === "kochi" ? "active" : ""}`}
+              onClick={() => setActiveHub("kochi")}
+              aria-pressed={activeHub === "kochi"}
+              aria-label="Show Kochi Hub posters"
+            >
+              Kochi Hub
+            </button>
+            <button
+              className={`hub-button ${activeHub === "malabar" ? "active" : ""}`}
+              onClick={() => setActiveHub("malabar")}
+              aria-pressed={activeHub === "malabar"}
+              aria-label="Show Malabar Hub posters"
+            >
+              Malabar Hub
+            </button>
+            <button
+              className={`hub-button ${activeHub === "travancore" ? "active" : ""}`}
+              onClick={() => setActiveHub("travancore")}
+              aria-pressed={activeHub === "travancore"}
+              aria-label="Show Travancore Hub posters"
+            >
+              Travancore Hub
+            </button>
+          </div>
+
           <div className="posters-carousel-container">
             <Swiper
+              key={activeHub} // Force re-render when hub changes
               loop={true}
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={30}
@@ -96,7 +133,7 @@ const PostersSection = () => {
               }}
               className="posters-swiper"
             >
-              {posters.map((poster, index) => (
+              {currentPosters.map((poster, index) => (
                 <SwiperSlide key={index}>
                   <div
                     className="poster-card"

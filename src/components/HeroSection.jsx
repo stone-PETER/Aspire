@@ -28,14 +28,14 @@ const HeroSection = ({ onRegisterClick }) => {
 
       <div className="hero-content section-inner">
         <h1>
-          <span className="signs-to-sounds">Signs to Sounds</span>
+          <span className="signs-to-sounds">Aspire</span>
           <br />
-          <span className="productathon">Productathon</span>
+          <span className="productathon">Learning Opportunity</span>
         </h1>
-        <p className="tagline">When Hands Speak, Tech Listens</p>
+        <p className="tagline">Empowering Innovation Across Three Hubs</p>
         <p className="intro">
-          An international competition inspiring innovation in assistive
-          technology for real-time sign language to speech conversion.
+          A tri-venue learning opportunity conducted in Kochi, Malabar, and Travancore hubs, 
+          bringing together innovation, collaboration, and growth.
         </p>
         <div className="hero-actions">
           <a

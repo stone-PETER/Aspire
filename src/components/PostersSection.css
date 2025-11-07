@@ -47,6 +47,50 @@
   border-radius: 2px;
 }
 
+/* Hub Toggle Buttons */
+.hub-toggles {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+  flex-wrap: wrap;
+}
+
+.hub-button {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border: 2px solid var(--secondary-color);
+  background-color: var(--white);
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hub-button:hover {
+  background-color: var(--secondary-light);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.hub-button.active {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-color: var(--secondary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.hub-button.active:hover {
+  background-color: var(--secondary-dark);
+}
+
+
 /* Carousel Container */
 .posters-carousel-container {
   max-width: 1400px;
