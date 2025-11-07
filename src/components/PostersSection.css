@@ -83,18 +83,18 @@
 }
 
 .hub-button:first-child {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  border-color: #22c55e;
+  color: #22c55e;
 }
 
 .hub-button:nth-child(2) {
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
+  border-color: #f97316;
+  color: #f97316;
 }
 
 .hub-button:last-child {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
+  border-color: #3b82f6;
+  color: #3b82f6;
 }
 
 .hub-button:hover {
@@ -103,17 +103,17 @@
 }
 
 .hub-button:first-child:hover {
-  background-color: var(--primary-color);
+  background-color: #22c55e;
   color: var(--white);
 }
 
 .hub-button:nth-child(2):hover {
-  background-color: var(--secondary-color);
+  background-color: #f97316;
   color: var(--white);
 }
 
 .hub-button:last-child:hover {
-  background-color: var(--accent-color);
+  background-color: #3b82f6;
   color: var(--white);
 }
 
@@ -123,18 +123,18 @@
 }
 
 .hub-button:first-child.active {
-  background-color: var(--primary-color);
-  border-color: var(--primary-dark);
+  background-color: #22c55e;
+  border-color: #16a34a;
 }
 
 .hub-button:nth-child(2).active {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-dark);
+  background-color: #f97316;
+  border-color: #ea580c;
 }
 
 .hub-button:last-child.active {
-  background-color: var(--accent-color);
-  border-color: var(--accent-dark);
+  background-color: #3b82f6;
+  border-color: #2563eb;
 }
 
 /* Carousel Container */
