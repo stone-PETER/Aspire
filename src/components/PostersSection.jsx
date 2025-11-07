@@ -111,11 +111,12 @@ const PostersSection = () => {
           <div className="posters-carousel-container">
             <Swiper
               key={activeHub} // Force re-render when hub changes
-              loop={true}
+              loop={currentPosters.length > 3} // Only enable loop if more than 3 slides
+              initialSlide={currentPosters.length / 2} // Always start at the first slide when hub changes
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={30}
               slidesPerView={1}
-              centeredSlides={true}
+              centeredSlides={currentPosters.length > 1} // Only center if more than 1 slide
               navigation
               pagination={{ clickable: true }}
               autoplay={{
@@ -128,11 +129,11 @@ const PostersSection = () => {
               }}
               breakpoints={{
                 768: {
-                  slidesPerView: 2,
+                  slidesPerView: Math.min(2, currentPosters.length),
                   spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 3,
+                  slidesPerView: Math.min(3, currentPosters.length),
                   spaceBetween: 30,
                 },
               }}
