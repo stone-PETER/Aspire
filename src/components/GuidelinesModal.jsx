@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./GuidelinesModal.css";
 
 const GuidelinesModal = ({ isOpen, onClose }) => {
+  const [selectedHub, setSelectedHub] = useState("");
+
+  // Hub registration links
+  const hubLinks = {
+    kochi: "https://www.yepdesk.com/sign-to-sound-kochi",
+    malabar: "https://www.yepdesk.com/sign-to-sound-malabar",
+    travancore: "https://www.yepdesk.com/sign-to-sound-travancore",
+  };
+
   if (!isOpen) return null;
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
+    }
+  };
+
+  const handleHubChange = (e) => {
+    setSelectedHub(e.target.value);
+  };
+
+  const handleRegisterClick = () => {
+    if (selectedHub && hubLinks[selectedHub]) {
+      window.open(hubLinks[selectedHub], "_blank");
     }
   };
 
@@ -16,12 +35,26 @@ const GuidelinesModal = ({ isOpen, onClose }) => {
         <div className="modal-header">
           <h2>Competition Guidelines</h2>
           <div className="modal-actions">
-            <button
-              className="register-btn"
-              onClick={() => window.open("https://www.yepdesk.com/sign-to-sound", "_blank")}
-            >
-              Register Now
-            </button>
+            <div className="hub-selection">
+              <select
+                className="hub-dropdown"
+                value={selectedHub}
+                onChange={handleHubChange}
+              >
+                <option value="">Select Hub</option>
+                <option value="kochi">Kochi</option>
+                <option value="malabar">Malabar</option>
+                <option value="travancore">Travancore</option>
+              </select>
+            </div>
+            {selectedHub && (
+              <button
+                className="register-btn"
+                onClick={handleRegisterClick}
+              >
+                Register Now
+              </button>
+            )}
             <button className="close-btn" onClick={onClose}>
               ×
             </button>
