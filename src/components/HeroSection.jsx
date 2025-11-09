@@ -1,75 +1,74 @@
+
 import React from "react";
-import "../App.css";
-import "./HeroSection.css";
 
 const HeroSection = ({ onRegisterClick }) => {
   const handleRegisterClick = (e) => {
     e.preventDefault();
-    onRegisterClick();
+    onRegisterClick?.();
   };
 
   return (
-    <section className="hero">
-      {/* Floating Bubbles */}
-      {/* <div className="floating-bubbles">
-        <div className="bubble bubble1">
-          <img src="/ast1.png" alt="hand icon" />
-        </div>
-        <div className="bubble bubble2">
-          <img src="/ast2.png" alt="sign icon" />
-        </div>
-        <div className="bubble bubble3">
-          <img src="/ast3.png" alt="sound wave" />
-        </div>
-        <div className="bubble bubble4">
-          <img src="/asts.png" alt="AI icon" />
-        </div>
-      </div> */}
+    <section className="hero-section">
+      {/* Animated background elements */}
+      <div className="hero-bg">
+        <div className="gradient-orb orb-1"></div>
+        <div className="gradient-orb orb-2"></div>
+        <div className="grid-overlay"></div>
+      </div>
 
-      <div className="hero-content section-inner">
-        <h1>
-          <span className="signs-to-sounds">ASPIRE</span>
-          <br />
-          <span className="productathon">Signal Processing Initiative</span>
-        </h1>
-        <p className="tagline">
+      <div className="hero-content">
+        {/* Main heading */}
+        <div className="title-wrapper">
+          <div className="title-accent"></div>
+          <h1 className="hero-title">
+            <span className="aspire-text">ASPIRE</span>
+            <span className="subtitle-text">Signal Processing Initiative</span>
+          </h1>
+        </div>
+
+        {/* Tagline */}
+        <p className="hero-tagline">
           Annual Signal Processing Initiative for Regional Empowerment
         </p>
-        {/* <p className="intro">
-          A flagship one-day event by IEEE SPS Kerala Chapter uniting Student
-          Branch Chapters across the Travancore Hub. Experience technical
-          excellence through multiple parallel tracks, each uniquely designed by
-          individual chapters to foster innovation, collaboration, and
-          leadership in Signal Processing.
-        </p> */}
-        <div className="hero-stats">
-          <div className="stat-item">
-            <span className="stat-number">3</span>
-            <span className="stat-label">Regional Hubs</span>
+
+        {/* Stats grid */}
+        <div className="stats-container">
+          <div className="stat-card">
+            <div className="stat-icon">📍</div>
+            <div className="stat-number">3</div>
+            <div className="stat-label">Regional Hubs</div>
           </div>
-          <div className="stat-item">
-            <span className="stat-number">Multiple</span>
-            <span className="stat-label">Parallel Tracks</span>
+          <div className="stat-card">
+            <div className="stat-icon">🎯</div>
+            <div className="stat-number">Multiple</div>
+            <div className="stat-label">Parallel Tracks</div>
           </div>
-          <div className="stat-item">
-            <span className="stat-number">1</span>
-            <span className="stat-label">Day Event</span>
+          <div className="stat-card">
+            <div className="stat-icon">⚡</div>
+            <div className="stat-number">1</div>
+            <div className="stat-label">Day Event</div>
           </div>
         </div>
-        <div className="hero-actions">
-          <a
-            href="#register"
-            className="button primary"
-            onClick={handleRegisterClick}
-          >
-            Register Now
+
+        {/* CTA buttons */}
+        <div className="cta-container">
+          <button className="btn btn-primary" onClick={handleRegisterClick}>
+            <span>Register Now</span>
+            <svg className="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7 3l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </button>
+          <a href="#about" className="btn btn-secondary">
+            <span>Learn More</span>
           </a>
-          <a href="#about" className="button secondary alt">
-            Learn More
-          </a>
+        </div>
+
+        {/* IEEE badge */}
+        <div className="ieee-badge">
+          <span className="badge-text">Powered by IEEE SPS Kerala Chapter</span>
         </div>
       </div>
-    </section>
+      </section>
   );
 };
 

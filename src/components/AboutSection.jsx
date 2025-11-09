@@ -10,9 +10,7 @@ const AboutSection = () => (
       <p>
         ASPIRE is a one-day flagship event organized by IEEE SPS Kerala Chapter
         in collaboration with all Student Branch Chapters under the Travancore
-        Hub. This initiative aims to foster technical excellence, collaboration,
-        and leadership among students through multiple parallel track events
-        hosted by individual Student Branch Chapters.
+        Hub. The initiative unites Student Branch Chapters across Kerala to host parallel technical sessions, workshops, and competitions, each designed to foster innovation, collaboration, and leadership in signal processing and allied domains. Supported technically and financially by IEEE SPS Kerala Chapter, ASPIRE provides students with opportunities to learn from experts, showcase projects, network with peers and professionals, and enhance their technical and managerial skills.Through ASPIRE, IEEE SPS Kerala Chapter envisions a community of empowered student innovators driving regional impact and technological advancement.
       </p>
 
       <div className="aspire-highlights">

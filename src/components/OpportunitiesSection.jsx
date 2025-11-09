@@ -14,66 +14,49 @@ const OpportunitiesSection = () => (
       </div>
 
       <div className="opportunities-grid">
-        <div className="opportunity-card">
-          <div className="card-icon">🎓</div>
-          <h3>Technical Excellence</h3>
-          <p>
-            Learn from expert speakers, engage in hands-on workshops, and
-            explore cutting-edge Signal Processing applications across multiple
-            specialized tracks.
-          </p>
-        </div>
-
-        <div className="opportunity-card">
-          <div className="card-icon">🤝</div>
-          <h3>Professional Networking</h3>
-          <p>
-            Connect with like-minded students, researchers, and industry
-            professionals from across Kerala's IEEE Student Branch Chapters.
-          </p>
-        </div>
-
-        <div className="opportunity-card">
-          <div className="card-icon">🏆</div>
-          <h3>Recognition & Awards</h3>
-          <p>
-            Showcase your skills, compete in technical challenges, and gain
-            recognition from IEEE SPS Kerala Chapter and participating
-            institutions.
-          </p>
-        </div>
-
-        <div className="opportunity-card">
-          <div className="card-icon">🚀</div>
-          <h3>Career Advancement</h3>
-          <p>
-            Access mentorship opportunities, industry insights, and pathways to
-            advanced research and career opportunities in Signal Processing.
-          </p>
-        </div>
-
-        <div className="opportunity-card">
-          <div className="card-icon">💡</div>
-          <h3>Innovation Platform</h3>
-          <p>
-            Experience diverse perspectives from different Student Branch
-            Chapters, each bringing unique technical approaches and innovative
-            solutions.
-          </p>
-        </div>
-
-        <div className="opportunity-card">
-          <div className="card-icon">🔗</div>
-          <h3>Regional Unity</h3>
-          <p>
-            Be part of a unified platform that brings together the entire
-            Travancore Hub under a shared vision of regional empowerment and
-            collaboration.
-          </p>
-        </div>
+      <div className="opportunity-card">
+        <div className="card-icon">📘</div>
+        <h3>Learning & Skill Development</h3>
+        <p>
+          Attend sessions on cybersecurity (by Offenso), stock marketing, prompt
+          engineering, social media marketing, and women empowerment. Gain hands-on
+          experience through DSP processor workshops, IoT & ESP sessions, and
+          mentorship programs.
+        </p>
       </div>
+
+      <div className="opportunity-card">
+        <div className="card-icon">👥</div>
+        <h3>Networking & Mentorship</h3>
+        <p>
+          Connect with industry experts, mentors, and peers across Kerala. Receive
+          personal guidance through dedicated mentorship programs and interact with
+          innovators shaping the future of signal processing.
+        </p>
+      </div>
+
+      <div className="opportunity-card">
+        <div className="card-icon">🌐</div>
+        <h3>Exposure & Innovation</h3>
+        <p>
+          Witness cutting-edge tech at the Robo Expo & Drone Expo. Explore
+          real-world signal processing applications, participate in interactive
+          demos, and showcase your ideas on a statewide platform.
+        </p>
+      </div>
+
+      <div className="opportunity-card">
+        <div className="card-icon">🎉</div>
+        <h3>Beyond Tech</h3>
+        <p>
+          Enjoy cultural shows, food stalls, fun games like paintball, and more.
+          Celebrate teamwork, creativity, and the vibrant community spirit of ASPiRE.
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 );
 
 export default OpportunitiesSection;
