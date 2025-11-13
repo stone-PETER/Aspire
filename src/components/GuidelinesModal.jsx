@@ -6,9 +6,9 @@ const GuidelinesModal = ({ isOpen, onClose }) => {
 
   // Hub registration links
   const hubLinks = {
-    kochi: "https://www.yepdesk.com/sign-to-sound-kochi",
-    malabar: "https://www.yepdesk.com/sign-to-sound-malabar",
-    travancore: "https://www.yepdesk.com/sign-to-sound-travancore",
+    kochi: "https://www.yepdesk.com/aspire-kochi-hub",
+    malabar: "https://www.yepdesk.com/aspire-malabar-hub",
+    travancore: "https://www.yepdesk.com/aspire-travancore-hub",
   };
 
   if (!isOpen) return null;
