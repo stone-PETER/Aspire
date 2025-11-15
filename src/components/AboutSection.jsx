@@ -8,9 +8,8 @@ const AboutSection = () => (
         ASPIRE - Annual Signal Processing Initiative for Regional Empowerment
       </h2>
       <p>
-        ASPIRE is a one-day flagship event organized by IEEE SPS Kerala Chapter
-        in collaboration with all Student Branch Chapters under the Travancore
-        Hub. The initiative unites Student Branch Chapters across Kerala to host parallel technical sessions, workshops, and competitions, each designed to foster innovation, collaboration, and leadership in signal processing and allied domains. Supported technically and financially by IEEE SPS Kerala Chapter, ASPIRE provides students with opportunities to learn from experts, showcase projects, network with peers and professionals, and enhance their technical and managerial skills.Through ASPIRE, IEEE SPS Kerala Chapter envisions a community of empowered student innovators driving regional impact and technological advancement.
+        ASPIRE ’25 is the one-day flagship event organized by the IEEE Signal Processing Society (SPS) Kerala Chapter in collaboration with various Student Branch Chapters under its Travancore, Kochi, and Malabar Hubs. The initiative unites Student Branch Chapters across Kerala to host parallel technical sessions, workshops, and competitions, each designed to foster innovation, collaboration, and leadership in signal processing and allied domains. Technically and financially supported by IEEE SPS Kerala Chapter, ASPIRE provides students with opportunities to learn from experts, showcase projects, network with peers and professionals, and enhance their technical and managerial skills.
+
       </p>
 
       <div className="aspire-highlights">
