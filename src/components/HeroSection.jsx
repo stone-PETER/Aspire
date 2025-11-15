@@ -22,7 +22,7 @@ const HeroSection = ({ onRegisterClick }) => {
           <div className="title-accent"></div>
           <div className="hero-title">
             <img
-              src="/public/logoWhite.png"
+              src="/logoWhite.png"
               alt="ASPIRE - Annual Signal Processing Initiative for Regional Empowerment"
               className="aspire-logo"
             />

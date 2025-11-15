@@ -126,11 +126,12 @@
 }
 
 .aspire-logo {
-  width: clamp(300px, 50vw, 500px);
+  width: clamp(250px, 45vw, 500px);
   height: auto;
   filter: brightness(0) invert(1);
   opacity: 0.95;
   transition: all 0.3s ease;
+  max-width: 90vw; /* Ensure it doesn't overflow on very small screens */
 }
 
 .aspire-logo:hover {
@@ -373,6 +374,11 @@
     padding: 1rem;
   }
 
+  .aspire-logo {
+    width: clamp(200px, 70vw, 400px);
+    max-width: 85vw;
+  }
+
   .stats-container {
     flex-direction: column;
     gap: 2rem;
@@ -413,6 +419,11 @@
 }
 
 @media (max-width: 480px) {
+  .aspire-logo {
+    width: clamp(180px, 80vw, 320px);
+    max-width: 90vw;
+  }
+
   .aspire-text {
     font-size: 3rem;
   }
@@ -423,5 +434,20 @@
 
   .stat-number {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .aspire-logo {
+    width: clamp(150px, 85vw, 280px);
+    max-width: 95vw;
+  }
+
+  .hero-section {
+    padding: 0.5rem;
+  }
+
+  .title-wrapper {
+    margin-bottom: 1.5rem;
   }
 }
