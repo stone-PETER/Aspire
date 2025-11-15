@@ -1,9 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import React, { useState, useEffect } from "react";
 import "./SBCLogo.css";
 
 // Organize logos by hub
@@ -35,44 +30,26 @@ const logosByHub = {
 const SBCLogoSection = () => {
   const [selectedLogo, setSelectedLogo] = useState(null);
   const [activeHub, setActiveHub] = useState("kochi"); // Default to Kochi
-  const originalOverflowRef = useRef(null);
-  const swiperRef = useRef(null);
 
   // Get logos for the currently active hub
   const currentLogos = logosByHub[activeHub];
 
   const openModal = (logoUrl) => {
     setSelectedLogo(logoUrl);
-    // Save original overflow value and prevent scrolling when modal is open
-    originalOverflowRef.current = document.body.style.overflow;
+    // Prevent scrolling when modal is open
     document.body.style.overflow = "hidden";
-    // Pause autoplay while modal is open
-    if (swiperRef.current && swiperRef.current.autoplay) {
-      swiperRef.current.autoplay.stop();
-    }
   };
 
   const closeModal = () => {
     setSelectedLogo(null);
-    // Restore original overflow value (fall back to "auto" if unknown)
-    document.body.style.overflow = originalOverflowRef.current ?? "auto";
-    // Resume autoplay when modal is closed
-    if (swiperRef.current && swiperRef.current.autoplay) {
-      swiperRef.current.autoplay.start();
-    }
+    // Restore scrolling when modal is closed
+    document.body.style.overflow = "auto";
   };
 
-  // Cleanup on unmount: make sure overflow is restored and autoplay resumed
+  // Cleanup on unmount: make sure overflow is restored
   useEffect(() => {
     return () => {
-      document.body.style.overflow = originalOverflowRef.current ?? "auto";
-      if (swiperRef.current && swiperRef.current.autoplay) {
-        try {
-          swiperRef.current.autoplay.start();
-        } catch {
-          // Silently ignore - autoplay may fail if swiper is already destroyed
-        }
-      }
+      document.body.style.overflow = "auto";
     };
   }, []);
 
@@ -124,59 +101,29 @@ const SBCLogoSection = () => {
             </button>
           </div>
 
-          <div className="logos-carousel-container">
-            <Swiper
-              key={activeHub} // Force re-render when hub changes
-              loop={currentLogos.length > 3} // Only enable loop if more than 3 slides
-              initialSlide={0} // Always start at the first slide when hub changes
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={30}
-              slidesPerView={1}
-              centeredSlides={currentLogos.length > 1} // Only center if more than 1 slide
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              onSwiper={(swiper) => {
-                swiperRef.current = swiper;
-              }}
-              breakpoints={{
-                768: {
-                  slidesPerView: Math.min(3, currentLogos.length),
-                  spaceBetween: 20,
-                },
-                1024: {
-                  slidesPerView: Math.min(4, currentLogos.length),
-                  spaceBetween: 30,
-                },
-              }}
-              className="logos-swiper"
-            >
+          <div className="logos-grid-container">
+            <div className="logos-grid">
               {currentLogos.map((logo, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    className="logo-card"
-                    onClick={() => openModal(logo)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyPress={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        openModal(logo);
-                      }
-                    }}
-                  >
-                    <img
-                      src={logo}
-                      alt={`Student Branch Logo ${index + 1}`}
-                      className="logo-image"
-                    />
-                  </div>
-                </SwiperSlide>
+                <div
+                  key={index}
+                  className="logo-card"
+                  onClick={() => openModal(logo)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      openModal(logo);
+                    }
+                  }}
+                >
+                  <img
+                    src={logo}
+                    alt={`Student Branch Logo ${index + 1}`}
+                    className="logo-image"
+                  />
+                </div>
               ))}
-            </Swiper>
+            </div>
           </div>
         </div>
       </section>
