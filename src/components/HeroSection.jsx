@@ -61,7 +61,7 @@ const HeroSection = ({ onRegisterClick }) => {
 
         {/* CTA buttons */}
         <div className="cta-container">
-          {/* <button className="btn btn-primary" onClick={handleRegisterClick}>
+          <button className="btn btn-primary" onClick={handleRegisterClick}>
             <span>Register Now</span>
             <svg
               className="btn-arrow"
@@ -77,7 +77,7 @@ const HeroSection = ({ onRegisterClick }) => {
                 strokeLinecap="round"
               />
             </svg>
-          </button> */}
+          </button>
           <a href="#about" className="btn btn-secondary">
             <span>Learn More</span>
           </a>
