@@ -143,7 +143,7 @@
 
 /* Logo Card */
 .logo-card {
-  background: #f97316; /* Orange background */
+  background: white; /* Orange background */
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
