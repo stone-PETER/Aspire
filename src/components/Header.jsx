@@ -24,9 +24,6 @@ const Header = ({ onRegisterClick }) => {
       className={`site-header ${scrolled ? "scrolled" : ""}`}
       role="banner"
     >
-      <a href="#main" className="skip-link">
-        Skip to content
-      </a>
       <div className="section-inner header-bar">
         <div className="brand">
           <div className="partner-logos">
