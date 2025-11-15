@@ -32,9 +32,9 @@ function App() {
         <div id="about">
           <AboutSection />
         </div>
-        <div id="phases">
+        {/* <div id="phases">
           <PhasesSection />
-        </div>
+        </div> */}
         <div id="opportunities">
           <OpportunitiesSection />
         </div>

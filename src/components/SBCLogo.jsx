@@ -1,57 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./SBCLogo.css";
 
-// Organize logos by hub
+// Auto-generated logo lists - you can regenerate these by running the generate-logos script
 const logosByHub = {
   kochi: [
-    "/SBCLogo/Kochi/ieee sahrdaya logo.png",
-    "/SBCLogo/Kochi/IMG_1302.PNG",
-    "/SBCLogo/Kochi/logo white.png",
-    "/SBCLogo/Kochi/logo_white (1).png",
+    "/SBCLogo/Kochi/IMG_1301.PNG",
     "/SBCLogo/Kochi/SB_LOGO_Purple.png",
+    "/SBCLogo/Kochi/cropped-cropped-Artboard-19-1-2.png",
+    "/SBCLogo/Kochi/ieee sahrdaya logo.png",
+    "/SBCLogo/Kochi/logo (3).png",
+    "/SBCLogo/Kochi/logo_white (1).png",
+    "/SBCLogo/Kochi/output-onlinepngtools.png",
   ],
   malabar: [
     "/SBCLogo/Malabar/Logo SB40 - Copy (2).png",
-    "/SBCLogo/Malabar/MDIT SB WHITE 1.png",
-    "/SBCLogo/Malabar/sb logo white (1).png",
+    "/SBCLogo/Malabar/MDIT SB BLACK 1.png",
     "/SBCLogo/Malabar/SB LOGO WHITE.PNG",
     "/SBCLogo/Malabar/SB LOGO.jpg",
+    "/SBCLogo/Malabar/ieeemeasb.png",
   ],
   travancore: [
-    "/SBCLogo/Travancore/ceal-ieee-sb.png",
     "/SBCLogo/Travancore/IEEE LMCST Logo.png",
     "/SBCLogo/Travancore/IEEE Logo white -2FE6CB8-.png",
-    "/SBCLogo/Travancore/ieee logo white-1.png",
     "/SBCLogo/Travancore/IEEE SB CET.png",
     "/SBCLogo/Travancore/IMG-20251104-WA0013.jpg",
+    "/SBCLogo/Travancore/ceal-ieee-sb.png",
+    "/SBCLogo/Travancore/ieee logo blue.png",
   ],
 };
 
 const SBCLogoSection = () => {
-  const [selectedLogo, setSelectedLogo] = useState(null);
   const [activeHub, setActiveHub] = useState("kochi"); // Default to Kochi
 
   // Get logos for the currently active hub
   const currentLogos = logosByHub[activeHub];
-
-  const openModal = (logoUrl) => {
-    setSelectedLogo(logoUrl);
-    // Prevent scrolling when modal is open
-    document.body.style.overflow = "hidden";
-  };
-
-  const closeModal = () => {
-    setSelectedLogo(null);
-    // Restore scrolling when modal is closed
-    document.body.style.overflow = "auto";
-  };
-
-  // Cleanup on unmount: make sure overflow is restored
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
 
   return (
     <>
@@ -107,14 +89,6 @@ const SBCLogoSection = () => {
                 <div
                   key={index}
                   className="logo-card"
-                  onClick={() => openModal(logo)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyPress={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      openModal(logo);
-                    }
-                  }}
                 >
                   <img
                     src={logo}
@@ -127,26 +101,6 @@ const SBCLogoSection = () => {
           </div>
         </div>
       </section>
-
-      {/* Lightbox Modal */}
-      {selectedLogo && (
-        <div className="logo-modal" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="modal-close"
-              onClick={closeModal}
-              aria-label="Close modal"
-            >
-              ×
-            </button>
-            <img
-              src={selectedLogo}
-              alt="Student Branch Logo"
-              className="modal-image"
-            />
-          </div>
-        </div>
-      )}
     </>
   );
 };

@@ -22,6 +22,9 @@ const Footer = () => (
           <div className="contact-person">
             <h5>Event Coordination</h5>
             <p>Student Branch Chapters - Travancore Hub</p>
+            <p>Student Branch Chapters - Kochi Hub</p>
+            <p>Student Branch Chapters - Malabar Hub</p>
+
           </div>
         </div>
         {/* <div className="sponsors section">
