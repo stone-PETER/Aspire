@@ -73,7 +73,7 @@ const Header = ({ onRegisterClick }) => {
             </li>
           </ul>
         </nav>
-        <div className="header-cta">
+        {/* <div className="header-cta">
           <a
             href="#register"
             className="button primary small"
@@ -81,7 +81,7 @@ const Header = ({ onRegisterClick }) => {
           >
             Register
           </a>
-        </div>
+        </div> */}
       </div>
     </header>
   );
