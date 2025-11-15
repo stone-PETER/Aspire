@@ -86,10 +86,7 @@ const SBCLogoSection = () => {
           <div className="logos-grid-container">
             <div className="logos-grid">
               {currentLogos.map((logo, index) => (
-                <div
-                  key={index}
-                  className="logo-card"
-                >
+                <div key={index} className="logo-card">
                   <img
                     src={logo}
                     alt={`Student Branch Logo ${index + 1}`}
