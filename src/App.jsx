@@ -7,6 +7,7 @@ import OpportunitiesSection from "./components/OpportunitiesSection";
 import PrizesSection from "./components/PrizesSection";
 import FAQSection from "./components/FAQSection";
 import PostersSection from "./components/PostersSection";
+import SBCLogoSection from "./components/SBCLogo";
 import TeamSection from "./components/TeamSection";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -43,8 +44,8 @@ function App() {
         {/* <div id="faq">
           <FAQSection />
         </div> */}
-        <div id="posters">
-          <PostersSection />
+        <div id="logos">
+          <SBCLogoSection />
         </div>
         {/* <div id="team">
           <TeamSection />

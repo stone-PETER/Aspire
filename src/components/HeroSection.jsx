@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./HeroSection.css";
 
@@ -21,16 +20,25 @@ const HeroSection = ({ onRegisterClick }) => {
         {/* Main heading */}
         <div className="title-wrapper">
           <div className="title-accent"></div>
-          <h1 className="hero-title">
-            <span className="aspire-text">ASPIRE</span>
-            <span className="subtitle-text">Signal Processing Initiative</span>
-          </h1>
+          <div className="hero-title">
+            <img
+              src="/public/logoWhite.png"
+              alt="ASPIRE - Annual Signal Processing Initiative for Regional Empowerment"
+              className="aspire-logo"
+            />
+            {/* <span className="subtitle-text">Signal Processing Initiative</span> */}
+          </div>
+        </div>
+
+        {/* Event Date */}
+        <div className="event-date">
+          <span className="date-text">December 7, 2025</span>
         </div>
 
         {/* Tagline */}
-        <p className="hero-tagline">
+        {/* <p className="hero-tagline">
           Annual Signal Processing Initiative for Regional Empowerment
-        </p>
+        </p> */}
 
         {/* Stats grid */}
         <div className="stats-container">
@@ -55,8 +63,19 @@ const HeroSection = ({ onRegisterClick }) => {
         <div className="cta-container">
           <button className="btn btn-primary" onClick={handleRegisterClick}>
             <span>Register Now</span>
-            <svg className="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M7 3l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <svg
+              className="btn-arrow"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M7 3l7 7-7 7"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
             </svg>
           </button>
           <a href="#about" className="btn btn-secondary">
@@ -69,7 +88,7 @@ const HeroSection = ({ onRegisterClick }) => {
           <span className="badge-text">Powered by IEEE SPS Kerala Chapter</span>
         </div>
       </div>
-      </section>
+    </section>
   );
 };
 
